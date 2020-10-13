@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>51/52单片机的一些基础知识 - mdmbct&#39;s blogs</title>
+  
+    <meta name="keywords" content="STC51、52">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="../../../../css/style.css">
+
+  
+
+  <script id="loadcss"></script>
+
+</head>
+
+<body>
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='../../../../index.html'>
+          
+            <img no-lazy class='logo' src='https://portrait.gitee.com/uploads/avatars/user/1848/5544649_mdmbct_1578988285.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
+          
+            <div class='cover-bg lazyload placeholder' data-bg="https://i0.hdslb.com/bfs/album/2135419cf4f0ded46701e750306a58e9ae8bcd82.jpg"></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        51/52单片机的一些基础知识
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://portrait.gitee.com/uploads/avatars/user/1848/5544649_mdmbct_1578988285.png">
+    <p>mdmbct</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="../../../../categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年4月27日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="51/52单片机的一些基础知识" data-path="">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <h2 id="C52引脚图"><a href="#C52引脚图" class="headerlink" title="C52引脚图"></a>C52引脚图</h2><p><img src="/.com//STC89C52.gif" class="lazyload" data-srcset="/.com//STC89C52.gif" srcset="data:image/png;base64,666"></p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>sfr：特殊功能寄存器，对于51，其特殊功能寄存器分布在80H ~ FFH之间。sfr数据类型占用一个存储单元。如，sfr P1 = 0x90</p>
+<p>sfr16：特殊功能寄存器，占用2个内存单元。如，sfr16 DPTR=0x82，低位寄存器在82H，高位在83H。</p>
+<p>sbit：是指特殊功能寄存器可寻址位。如，sbit OV=PSW^2</p>
+<h2 id="数据存储类型"><a href="#数据存储类型" class="headerlink" title="数据存储类型"></a>数据存储类型</h2><p>1、data：固定指前面0x00-0x7f的128个RAM，可以用acc直接读写的，速度最快，生成的代码也最小。长度8bit。</p>
+<p>2、idata：固定指前面0x00-0xff的256个RAM，其中前128和data的128完全相同，只是因为访问的方式不同。idata是用类似C中的指针方式访问的。（不重要的补充：c中idata做指针式的访问效果很好）长度8bit</p>
+<p>3、 xdata：外部扩展RAM，一般指外部0x0000-0xffff空间，用@DPTR访问。长度16bit。</p>
+<p>4、 pdata：外部扩展RAM的低256个字节，地址出现在A0-A7的上时读写，@Ri读写。这个比较特殊，而且C51好象有对此BUG，建议少用。长度8bit。</p>
+<p>5、code：code的作用是告诉单片机，我定义的数据要放在ROM（程序存储区）里面，写入后就不能再更改。长度16bit。</p>
+<p>6、bdata：片内RAM寻址区，位于20H ~ 2FH空间。实质上是DATA中的位寻址区，在这个区中声明变量就可以进行位寻址。长度1bit。</p>
+<h2 id="一些寄存器"><a href="#一些寄存器" class="headerlink" title="一些寄存器"></a>一些寄存器</h2><h3 id="1、PSW程序状态寄存器"><a href="#1、PSW程序状态寄存器" class="headerlink" title="1、PSW程序状态寄存器"></a>1、PSW程序状态寄存器</h3><p>其中的RS1，RS0</p>
+<p>RS1        RS0        所选的4组寄存器</p>
+<p>0        0        0区(片内RAM地址00H ~ 07H)</p>
+<p>0        1        1区(08H ~ 0FH)</p>
+<p>1        0         2区(10H ~ 17H)</p>
+<p>1        1        3区(18H ~ 1FH)</p>
+<h3 id="2、常用寄存器"><a href="#2、常用寄存器" class="headerlink" title="2、常用寄存器"></a>2、常用寄存器</h3><p>TCON    定时器、计数器控制寄存器</p>
+<p>TMOD    定时器、计数器工作方式控制</p>
+<p>TL0        定时器、计数器0的低字节</p>
+<p>TH0        定时器、计数器0的高字节</p>
+<p>TL1        定时器、计数器的1低字节</p>
+<p>TH1        定时器、计数器1的高字节</p>
+<p>SCON    串行控制寄存器</p>
+<p>SBUF    串行发送数据缓冲器</p>
+<p>IE        中断允许控制寄存器</p>
+<p>IP        中断优先级控制寄存器</p>
+<h3 id="3、其他寄存器"><a href="#3、其他寄存器" class="headerlink" title="3、其他寄存器"></a>3、其他寄存器</h3><p>AUXR    辅助寄存器</p>
+<p>AUXR1    辅助寄存器</p>
+<p>DP0L    数据指着DPTR0低字节</p>
+<p>DP0H    数据指针DPTR0高字节</p>
+<p>DP1L    数据指着DPTR1低字节</p>
+<p>DP1H    数据指针DPTR1高字节</p>
+<p>WDTRST 看门狗复位寄存器</p>
+<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><h3 id="C52中断种类"><a href="#C52中断种类" class="headerlink" title="C52中断种类"></a>C52中断种类</h3><p><img src="/.com//51-52%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%5CSTC89C52%E4%B8%AD%E6%96%AD.png" class="lazyload" data-srcset="/.com//51-52%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%5CSTC89C52%E4%B8%AD%E6%96%AD.png" srcset="data:image/png;base64,666"></p>
+<h3 id="C52中断优先级"><a href="#C52中断优先级" class="headerlink" title="C52中断优先级"></a>C52中断优先级</h3><p><img src="/.com//STC89C52%E4%B8%AD%E6%96%AD%E4%BC%98%E5%85%88%E7%BA%A7.png" class="lazyload" data-srcset="/.com//STC89C52%E4%B8%AD%E6%96%AD%E4%BC%98%E5%85%88%E7%BA%A7.png" srcset="data:image/png;base64,666"></p>
+<h3 id="中断请求源"><a href="#中断请求源" class="headerlink" title="中断请求源"></a>中断请求源</h3><p>INT0：外部中断请求0，外部中断请求信号，低电平或者负跳变有效，中断请求标志IE0。</p>
+<p>INT1：外部中断请求1，外部中断请求信号，低电平或者负跳变有效，中断请求标志IE1。</p>
+<p>TF0：定时器、计数器T0计数溢出中断请求标志。</p>
+<p>TF1：定时器、计数器T1计数溢出中断请求标志。</p>
+<p>TI or RI：串行口发送中断请求标志TI或接受中断请求标志RI。</p>
+<h3 id="中断请求标志寄存器"><a href="#中断请求标志寄存器" class="headerlink" title="中断请求标志寄存器"></a>中断请求标志寄存器</h3><h4 id="TCON寄存器"><a href="#TCON寄存器" class="headerlink" title="TCON寄存器"></a>TCON寄存器</h4><p>作为定时器你、计数器控制寄存器，字节地址88H，<strong>可位寻址</strong>。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCON</td>
+<td>TF1</td>
+<td>TR1</td>
+<td>TF0</td>
+<td>TR0</td>
+<td>IE1</td>
+<td>IT1</td>
+<td>IE0</td>
+<td>IT0</td>
+</tr>
+<tr>
+<td>位地址</td>
+<td>8FH</td>
+<td>——</td>
+<td>8DH</td>
+<td>——</td>
+<td>8BH</td>
+<td>8AH</td>
+<td>89H</td>
+<td>88H</td>
+</tr>
+</tbody></table>
+<p>1）TF0、TF1：片内定时器T0、T1溢出中断请求标志位。启动定时器T计数后，T的初始值开始加1计数，当计数溢    出时，由硬件自动<strong>置TF（与T0、T1对应，后面亦同，不做说明）为1</strong>，向CPU请求中断。CPU响应中断时，TF由<strong>硬件自动清零</strong>，TF也可由软件清零。                                                                                                                                                                                                                </p>
+<p>2）IE0、IE1：外部中断0、1的请求标志位。IE为1，表示对应的外部中断请求了中断。</p>
+<p>3）IT0、IT1：选择外部请求中断是电平触发（0）还是跳沿触发（1）。</p>
+<p>为电平触发时，加到对应外部中断的引脚的外部请求中断信号为低电平有效，并把对应的IE置为1。转向中断服务程序时，则由<strong>硬件自动将对应的IE清零</strong>。</p>
+<p>为跳沿触发时，……………………………………………………………………从高到底的负跳沿有效。………………………………</p>
+<p>当51复位后，TCON被清零，5个中断请求源的中断请求标志均为0。</p>
+<h4 id="串行口控制寄存器CSON"><a href="#串行口控制寄存器CSON" class="headerlink" title="串行口控制寄存器CSON"></a>串行口控制寄存器CSON</h4><p>可位寻址</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SCON</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>TI</td>
+<td>RI</td>
+</tr>
+<tr>
+<td>位地址</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>99H</td>
+<td>98H</td>
+</tr>
+</tbody></table>
+<p>1）TI：串行口发送中断请求标志位。当CPU将1字节的数据写入SBUF时，就启动一帧串行数据的发送，没发送完             一帧串行数据后，硬件自动将TI自动置1。CPU响应串行口发送中断时，并不能清除TI标志，TI标志必须在中断服务程序中<strong>用代码对齐清零</strong>。</p>
+<p>2）RI：串行口接收中断请求标志位。在串行口接受完一个串行数据帧，硬件自动使RI请求标志置1。cpu在响应串行口接受中断时，RI标志并不清零，必须在中断服务程序中<strong>用代码对RI清零</strong>。</p>
+<p><strong>注：</strong>当发送完一帧数据后TI = 1，如果正在发送数据，则TI = 0，等到TI = 1时，则数据发送完了。等数据发送完了，TI自动由硬件置1需要通过代码置0。这就是写串行口发送数据时，会出现下面的代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">send</span> <span class="params">(uchar dat)</span> </span>&#123;</span><br><span class="line">	SBUF = dat;</span><br><span class="line">	<span class="keyword">while</span> (!TI);</span><br><span class="line">	TI = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="中断允许寄存器IE"><a href="#中断允许寄存器IE" class="headerlink" title="中断允许寄存器IE"></a>中断允许寄存器IE</h4><p>可位寻址</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE</td>
+<td>EA</td>
+<td>——</td>
+<td>ET2</td>
+<td>ES</td>
+<td>ET1</td>
+<td>EX1</td>
+<td>ET0</td>
+<td>EX0</td>
+</tr>
+<tr>
+<td>位地址</td>
+<td>AFH</td>
+<td>——</td>
+<td>ADH</td>
+<td>ACH</td>
+<td>ABH</td>
+<td>AAH</td>
+<td>A9H</td>
+<td>A8H</td>
+</tr>
+</tbody></table>
+<p>1）EA：中断允许总开控制位。</p>
+<p>2）ES：串行口中断允许控制位。</p>
+<p>3）ET1：定时器、计数器T1溢出中断允许控制位。</p>
+<p>4）ET2：定时器、计数器T2溢出中断运行控制位，只有C52有。</p>
+<p>4）EX1：外部中断1中断允许控制位。</p>
+<p>5）ET0：定时器、计数器T0溢出中断允许控制位。</p>
+<p>6）EX0：外部中断0中断允控制位。</p>
+<p>上述的各种中断允许控制位都是1——中断被允许，0——中断被屏蔽。</p>
+<p>单片机复位后，IE被清零，所有中断都被禁止。各个中断都可以用代码置1或0。</p>
+<h4 id="中断优先级寄存器IP"><a href="#中断优先级寄存器IP" class="headerlink" title="中断优先级寄存器IP"></a>中断优先级寄存器IP</h4><p>可位寻址</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>PS</td>
+<td>PT1</td>
+<td>PX1</td>
+<td>PT0</td>
+<td>PX0</td>
+</tr>
+<tr>
+<td>位地址</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>BCH</td>
+<td>BBH</td>
+<td>BAH</td>
+<td>B9H</td>
+<td>B8H</td>
+</tr>
+</tbody></table>
+<p>1）PS：串行口中断优先级控制位。</p>
+<p>2）PT1：定时器T1中断优先级控制位。</p>
+<p>3）PX1：外部中断1中断优先级控制位。</p>
+<p>4）PT0：定时器T0中断优先级控制位。</p>
+<p>5）PX0：外部中断0中断优先级控制位。</p>
+<p>上述所有中断优先级控制位都是，1——高优先级，0——低优先级。</p>
+<h2 id="定时器、计数器"><a href="#定时器、计数器" class="headerlink" title="定时器、计数器"></a>定时器、计数器</h2><p>定时器、计数器以下简称“定计”</p>
+<p>都是由高8位与低8位组成的。</p>
+<h3 id="工作方式寄存器TMOD"><a href="#工作方式寄存器TMOD" class="headerlink" title="工作方式寄存器TMOD"></a>工作方式寄存器TMOD</h3><p>用于选择定计的工作模式和工作方式，字节地址89H，不可位寻址。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TMOD</td>
+<td>GATE</td>
+<td>C/T</td>
+<td>M1</td>
+<td>M0</td>
+<td>GATE</td>
+<td>C/T</td>
+<td>M1</td>
+<td>M0</td>
+</tr>
+</tbody></table>
+<p>D7 ~ D4是T1方式字段，D3 ~ D0是T0方式字段。</p>
+<p>各组功能如下：</p>
+<p>1）GATE：门控位</p>
+<p>0——定计是否计数，仅由控制位TRx（x = 0或1，见TCON寄存去）来控制。</p>
+<p>1——定计是否计数，要由外部中断引脚（P3^2、P3^3）上的电平与运行控制位TRx两个条件共同控制。</p>
+<p>2）M1、M0工作方式选择位</p>
+<table>
+<thead>
+<tr>
+<th>M1</th>
+<th>M0</th>
+<th>工作方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>方式0，为13位定</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>方式1，为16位定计</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>方式2，为8位常数自动重新装载的定计</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>方式3，仅适用于T0，此时T0分为2个8位计数器，T1停止计数</td>
+</tr>
+</tbody></table>
+<p>3）C/T：</p>
+<p>1——计数器模式是对P3^4（T0）和P3^5（T1）上的外部脉冲进行计数。</p>
+<p>0——定时器模式是对单片机系统时钟信号经过片内12分频后的内部脉冲信号（脉冲信号周期 = 机器周期）计数。</p>
+<h3 id="控制寄存器TCON"><a href="#控制寄存器TCON" class="headerlink" title="控制寄存器TCON"></a>控制寄存器TCON</h3><p>字节地址88H，可位寻址，位地址为88H ~ 8FH</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCON</td>
+<td>TF1</td>
+<td>TR1</td>
+<td>TF0</td>
+<td>TR0</td>
+<td>IE1</td>
+<td>IT1</td>
+<td>IE0</td>
+<td>IT0</td>
+</tr>
+</tbody></table>
+<h3 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h3><p>click <a target="_blank" rel="noopener" href="http://www.elecfans.com/emb/danpianji/20181105809237.html">here</a></p>
+<h3 id="定时器定初值计算"><a href="#定时器定初值计算" class="headerlink" title="定时器定初值计算"></a>定时器定初值计算</h3><p>通用计算方法</p>
+<p>计算时间t，晶振频率f</p>
+<p><img src="/.com//PublicFiles\GiteeBlog\source_posts\51-52单片机的一些基础知识\image-20201013160907197.png" class="lazyload" data-srcset="/.com//PublicFiles\GiteeBlog\source_posts\51-52单片机的一些基础知识\image-20201013160907197.png" srcset="data:image/png;base64,666" alt="image-20201013160907197"></p>
+<p>TH = x / 256</p>
+<p>TL = x % 256</p>
+<p><strong>解释：</strong>低8位可以存放256个机器周期，每满256次向高8位进1，x / 256表示在高8位存在多少个256次溢出，x % 256就是剩下未满256，放在低8位。</p>
+<h3 id="C52的定时器、计数器T2"><a href="#C52的定时器、计数器T2" class="headerlink" title="C52的定时器、计数器T2"></a>C52的定时器、计数器T2</h3><p>16位定计，与之相关的有2个特殊功能寄存器T2CON与T2MOD。</p>
+<p>T2有3种工作方式：捕获、自动重新装载（递增或递减计数）和波特率发生器 。这3种模式由T2CON 中的位进行选择。有两个8为寄存器：TH2和TL2 </p>
+<h4 id="T2CON"><a href="#T2CON" class="headerlink" title="T2CON"></a>T2CON</h4><p>字节地址C8H，可位寻址，位地址为C8H ~ CFH</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T2CON</td>
+<td>TF2</td>
+<td>EXF2</td>
+<td>RCLK</td>
+<td>TCLK</td>
+<td>EXEN2</td>
+<td>TR2</td>
+<td>C/T2</td>
+<td>CP/RL2</td>
+</tr>
+</tbody></table>
+<p>1）TF2：T2溢出中断标志，在捕捉方式和自动重装初值方式中计数溢出时置1，对应中断入口002BH，但中断响应后，必须<strong>由软件清0</strong>。在串行口波特率发生器方式中TF2不会置1。</p>
+<p>2）EXF2：T2外部中断标志。当EXEN2=1(T2外部中断允许)时，引脚T2EX(P1。1)的负跳变使EXF2=1，CPU响应中断，入口地址002BH；EXF2也必须<strong>由软件清0</strong>。</p>
+<p>3）RCLK、TCLK：选择串行口波特率发生器方式。RCLK=1和TCLK=1时，T2的溢出率是串行口发送和接收的时钟;当只有RCLK=1时，T2只是串口的接收时钟;只有 TCLK=1时，T2只是串口的发送时钟。此时忽略CP/RL2位。</p>
+<p>4）EXEN2：T2外部中断允许标志。使EXEN2=1，当T2工作在捕捉方式时，引脚T2EX上出现的负跳变使EXF2=1，申请中断，同时TH2、TL2的当前值自动送入RCAP2H、RCAP2L寄存器;如果T2工作在重载初值方式，那么T2EX的负跳变将RCAP2H和RCAP2L的内容自动装入TH2、TL2，同时EXF2=1，申请中断。EXEN2=0时，T2EX引脚上的变化对T2工作无影响。</p>
+<p>5）TR2：定时器2启动/停止控制位。</p>
+<p>6）C/T2：定时器2的定时器/计数器选择位（在reg52头文件中定义为了C_T2,请注意，下面相同）</p>
+<p>7）CP/RL2：自动重装方式和捕捉方式选择(此时RCLK和TCLK应为0)。为0-自动重装方式，为1-捕捉方式。</p>
+<h4 id="T2MOD"><a href="#T2MOD" class="headerlink" title="T2MOD"></a>T2MOD</h4><p>字节地址为C9H，不可位寻址</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T2MOD</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>T2OE</td>
+<td>DCEN</td>
+</tr>
+</tbody></table>
+<p>1）T2OE：T2输出的使能位。</p>
+<p>2）DCEN：置为1时，允许T2增1减1计数，并由T2EX引脚（P1.1）上的电平决定增还是减1计数。</p>
+<h4 id="工作方式-1"><a href="#工作方式-1" class="headerlink" title="工作方式"></a>工作方式</h4><table>
+<thead>
+<tr>
+<th>RCLK+TCLK</th>
+<th>CP**/RL2**</th>
+<th>TR2</th>
+<th>MODE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>16位自重载</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>16位捕获</td>
+</tr>
+<tr>
+<td>1</td>
+<td>X</td>
+<td>1</td>
+<td>波特率发生器</td>
+</tr>
+<tr>
+<td>X</td>
+<td>X</td>
+<td>0</td>
+<td>关</td>
+</tr>
+</tbody></table>
+<p>1）16位自动重装载：</p>
+<p>寄存器TH2、TL2是16位加1的计数器，RCAP2H、RCAP2L是存放初值的寄存器（陷阱寄存器）。 可以设置为递增/递减自动重载计数器，并通过DCEN（Down Counter Enable）位来控制其模式。16位自动重装模式中，定时器2可通过C/T2位配置为定时器/计数器，根据外部使能标志位EXEN2的置1和清0，可分为两种情况：</p>
+<p>EXEN2=0时，定时器2为16位自动重装的普通定时器，由陷阱寄存器提供重装的值，只需要预设一下即可，可用于定时精度要求高，定时时间长（16位）的情况。</p>
+<p>EXEN2=1时，根据递减计数使能位DCEN的置1和清0可分为两种情况：</p>
+<p>​        T2MOD=0x00(DCEN=0;默认情况)，与上一种情况相比，此时16位自动重新装载可由外部T2EX的负跳变，和溢出任意一种触发，并都能产生中断。</p>
+<p>​        T2MOD=0x01(DCEN=1)，此时允许T2EX控制计数的方向；T2EX=0时，重装的值为0FF和0FF，递减计数与陷阱寄存器预存值相等时，置位TF2产生中断。T2EX=1时；自动重装值为陷阱寄存器中的值，溢出时置位TF2产生中断。</p>
+<p>在此方式中，若置EXEN2=1时，除上述功能外，引脚P1。1上的负跳变将RCAP2H、RCAP2L的内容自动装入TH2、TL2使之提前开始重新计数，同时置EXF2=1，申请中断。 </p>
+<p>demo：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initTimer2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	T2CON = <span class="number">0x00</span>;</span><br><span class="line">	T2MOD = <span class="number">0x00</span>;	</span><br><span class="line">	TH2 = RCAP2H = <span class="number">0xff</span>;		<span class="comment">//中断0.1ms</span></span><br><span class="line">    TL2 = RCAP2L = <span class="number">0xa4</span>;</span><br><span class="line">	TR2 = <span class="number">1</span>;	<span class="comment">//开启定时器2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2）波特率发生器：</p>
+<p>T2CON的TCLK和RCLK位为0（默认）时，串行口发送和接受的波特率由定时器1提供；置位为1时，由定时器2提供。可以一个通过定时器1，一个通过定时器2，这样可以获得发送和接受时不同的波特率。 </p>
+<p><strong>注：</strong></p>
+<p>定时器2作为定时器时，递增频率为晶振频率的12分频，而定时器2作为波特率发生器时，它的递增频率为晶振频率的2分频。</p>
+<p>模式1和模式3的波特率 =（振荡器频率/32）* （65535 - N）</p>
+<p>定时器2为计数模式时，外部时钟信号由T2（P1^0）引脚进入。</p>
+<p>定时器2作为波特率发生器的时候，TH2溢出并不会置位TF2，所以此时可以不用禁止定时器2中断，若是EXEN2位被置位时，可以将T2EX作为附加的外部中断。</p>
+<p>定时器2作为波特率发生器的时候，不要对TH2和TL2读写，可以读陷阱寄存器，但是也不要写。当对定时器2的陷阱寄存器进行访问时，应关闭定时器（TR2清0）。</p>
+<p>demo</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initSerial</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    RCAP2L = <span class="number">0xD9</span>; <span class="comment">//9600波特率对应 FFD9，低位为D9</span></span><br><span class="line">    RCAP2H = <span class="number">0xFF</span>; <span class="comment">//高位为FF</span></span><br><span class="line">    T2CON = <span class="number">0x34</span>;  <span class="comment">//RCLK、TCLK、TR2置1</span></span><br><span class="line">    SCON = <span class="number">0x50</span>;   <span class="comment">//串口工作模式1，接收使能</span></span><br><span class="line">    ES = <span class="number">1</span>;        <span class="comment">//打开接收中断</span></span><br><span class="line">    EA = <span class="number">1</span>;        <span class="comment">//打开总中断</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="串行口"><a href="#串行口" class="headerlink" title="串行口"></a>串行口</h2><h3 id="串行口控制寄存器CSON-1"><a href="#串行口控制寄存器CSON-1" class="headerlink" title="串行口控制寄存器CSON"></a>串行口控制寄存器CSON</h3><p>字节地址98H，可位寻址，位地址98H ~ 9FH，所有位都可用软件来置0或1。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SCON</td>
+<td>SM0</td>
+<td>SM1</td>
+<td>SM2</td>
+<td>REN</td>
+<td>TB8</td>
+<td>RB8</td>
+<td>TI</td>
+<td>RI</td>
+</tr>
+<tr>
+<td>位地址</td>
+<td>9FH</td>
+<td>9EH</td>
+<td>9DH</td>
+<td>9CH</td>
+<td>9BH</td>
+<td>9AH</td>
+<td>99H</td>
+<td>98H</td>
+</tr>
+</tbody></table>
+<p>1）SM0、SM1串行口4种工作方式选择位。</p>
+<table>
+<thead>
+<tr>
+<th>SM0</th>
+<th>SM 1</th>
+<th>工作方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>方式0，同步移位寄存器方式（用于扩展IO口）</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>方式1，8位异步收发，波特率可变（由定时器控制）</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>方式2，9位异步收发，波特率为f/64或f/32</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>方式3，9位异步收发，波特率可变（由定时器控制）</td>
+</tr>
+</tbody></table>
+<p>2）REN：允许串行接收位，由代码置0或1。</p>
+<p>1——允许串行口接收数据，0——禁止串行口接收数据。</p>
+<h3 id="特殊功能寄存器PCON"><a href="#特殊功能寄存器PCON" class="headerlink" title="特殊功能寄存器PCON"></a>特殊功能寄存器PCON</h3><p>字节地址87H，不能位寻址</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D7</th>
+<th>D6</th>
+<th>D5</th>
+<th>D4</th>
+<th>D3</th>
+<th>D2</th>
+<th>D1</th>
+<th>D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PCON</td>
+<td>SMOD</td>
+<td>——</td>
+<td>——</td>
+<td>——</td>
+<td>GF1</td>
+<td>GF0</td>
+<td>PD</td>
+<td>IDL</td>
+</tr>
+</tbody></table>
+<p>SMOD：波特率选择位</p>
+<p>方式1的波特率计算公式</p>
+<p><img src="/.com//PublicFiles\GiteeBlog\source_posts\51-52单片机的一些基础知识\image-20201013160725658.png" class="lazyload" data-srcset="/.com//PublicFiles\GiteeBlog\source_posts\51-52单片机的一些基础知识\image-20201013160725658.png" srcset="data:image/png;base64,666" alt="image-20201013160725658"></p>
+<p>当SMOD = 1时，要比SMOD = 0的波特率加倍。</p>
+<h3 id="波特率计算"><a href="#波特率计算" class="headerlink" title="波特率计算"></a>波特率计算</h3><p>方式0和方式2这里不提。</p>
+<p>方式1或者方式3，常用定时器T1作为波特率发生器，关系式为：</p>
+<p><img src="/.com//PublicFiles\GiteeBlog\source_posts\51-52单片机的一些基础知识\image-20201013160929078.png" class="lazyload" data-srcset="/.com//PublicFiles\GiteeBlog\source_posts\51-52单片机的一些基础知识\image-20201013160929078.png" srcset="data:image/png;base64,666" alt="image-20201013160929078"></p>
+<p>实际设定波特率时，用定时器方式2（自动装初值）确定波特率比较好。TL1作为8位计数器，TH1存放备用初值。</p>
+<p>设T1方式2的初值为x，则</p>
+<p><img src="/.com//PublicFiles\GiteeBlog\source_posts\51-52单片机的一些基础知识\image-20201013160944271.png" class="lazyload" data-srcset="/.com//PublicFiles\GiteeBlog\source_posts\51-52单片机的一些基础知识\image-20201013160944271.png" srcset="data:image/png;base64,666" alt="image-20201013160944271"></p>
+<p>T1产生的常用波特率</p>
+<table>
+<thead>
+<tr>
+<th>波特率</th>
+<th align="left">f（晶振频率）</th>
+<th>SMOD位</th>
+<th>方式</th>
+<th>初值x</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>62500</td>
+<td align="left">12</td>
+<td>1</td>
+<td>2</td>
+<td>FFH</td>
+</tr>
+<tr>
+<td>19200</td>
+<td align="left">11.0592</td>
+<td>1</td>
+<td>2</td>
+<td>FDH</td>
+</tr>
+<tr>
+<td>9600</td>
+<td align="left">11.0592</td>
+<td>0</td>
+<td>2</td>
+<td>FDH</td>
+</tr>
+<tr>
+<td>4800</td>
+<td align="left">11.0592</td>
+<td>0</td>
+<td>2</td>
+<td>FAH</td>
+</tr>
+<tr>
+<td>2400</td>
+<td align="left">11.0592</td>
+<td>0</td>
+<td>2</td>
+<td>F4H</td>
+</tr>
+<tr>
+<td>1200</td>
+<td align="left">11.0592</td>
+<td>0</td>
+<td>2</td>
+<td>E8H</td>
+</tr>
+</tbody></table>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://yoursite.com/2019/04/27/51-52%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/>http://yoursite.com/2019/04/27/51-52%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-13T17:50:57+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年10月13日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/STC51%E3%80%8152/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>STC51、52</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/27/51-52%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/&title=51/52单片机的一些基础知识 - mdmbct's blogs&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2019/04/27/51-52%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/&title=51/52单片机的一些基础知识 - mdmbct's blogs&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/27/51-52%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/&title=51/52单片机的一些基础知识 - mdmbct's blogs&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='../LCD1602-12864%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>LCD1602/12864的简单使用</p>
+          <p class='content'>2019.04.23
+隔了好久，为了参加比赛，再次拿起51单片机
+LCD1602引脚说明
+与51连接数据接线仅供参考
+1.直接接地  
+2.接VCC 
+3.接在一个滑动变阻上再与地相接 。VL为...</p>
+        </a>
+      
+      
+        <a class='next' href='../../../03/27/Linux-Deepin-%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/'>
+          <p class='title'>Linux(Deepin)常用开发环境安装<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>今天手误把电脑上的deepin弄坏掉了，花了点时间重新配置了一些开发环境，把一些要点记录下来。
+1、安装jdk打开/etc/profile，在末尾添加
+/Programs/jdk1.8.0_18...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#C52%E5%BC%95%E8%84%9A%E5%9B%BE"><span class="toc-text">C52引脚图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据存储类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">一些寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81PSW%E7%A8%8B%E5%BA%8F%E7%8A%B6%E6%80%81%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">1、PSW程序状态寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%B8%B8%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">2、常用寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%85%B6%E4%BB%96%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">3、其他寄存器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD"><span class="toc-text">中断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C52%E4%B8%AD%E6%96%AD%E7%A7%8D%E7%B1%BB"><span class="toc-text">C52中断种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C52%E4%B8%AD%E6%96%AD%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">C52中断优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E8%AF%B7%E6%B1%82%E6%BA%90"><span class="toc-text">中断请求源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E8%AF%B7%E6%B1%82%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">中断请求标志寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TCON%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">TCON寄存器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%B2%E8%A1%8C%E5%8F%A3%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8CSON"><span class="toc-text">串行口控制寄存器CSON</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E5%85%81%E8%AE%B8%E5%AF%84%E5%AD%98%E5%99%A8IE"><span class="toc-text">中断允许寄存器IE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E4%BC%98%E5%85%88%E7%BA%A7%E5%AF%84%E5%AD%98%E5%99%A8IP"><span class="toc-text">中断优先级寄存器IP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E3%80%81%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="toc-text">定时器、计数器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F%E5%AF%84%E5%AD%98%E5%99%A8TMOD"><span class="toc-text">工作方式寄存器TMOD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8TCON"><span class="toc-text">控制寄存器TCON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="toc-text">工作方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E5%AE%9A%E5%88%9D%E5%80%BC%E8%AE%A1%E7%AE%97"><span class="toc-text">定时器定初值计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C52%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8%E3%80%81%E8%AE%A1%E6%95%B0%E5%99%A8T2"><span class="toc-text">C52的定时器、计数器T2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#T2CON"><span class="toc-text">T2CON</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#T2MOD"><span class="toc-text">T2MOD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F-1"><span class="toc-text">工作方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E8%A1%8C%E5%8F%A3"><span class="toc-text">串行口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E8%A1%8C%E5%8F%A3%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8CSON-1"><span class="toc-text">串行口控制寄存器CSON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%8A%9F%E8%83%BD%E5%AF%84%E5%AD%98%E5%99%A8PCON"><span class="toc-text">特殊功能寄存器PCON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E7%89%B9%E7%8E%87%E8%AE%A1%E7%AE%97"><span class="toc-text">波特率计算</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="51/52单片机的一些基础知识";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.1" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<!-- required -->
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+<script src="../../../../js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "",
+      appKey: "",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="../../../../js/app.js"></script>
+
+
+
+
+  
+    
+<script src="../../../../js/search.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'http://yoursite.com' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'http://yoursite.com' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'http://yoursite.com' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+        
+        
+        
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
